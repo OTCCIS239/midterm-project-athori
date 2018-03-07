@@ -28,26 +28,6 @@ require_once('./includes/init.php');
     - Products -->
     <div class="container">
         
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Chicago Guitars</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Guitars</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Basses</a>
-                </
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Drums</a>
-                </li>
-                
-                </ul>
-            </div>
-        </nav>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
