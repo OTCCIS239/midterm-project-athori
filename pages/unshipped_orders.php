@@ -30,7 +30,7 @@ $statement2 = $conn->prepare($queryOrders);
             <div class="row">
                 <div class="col-sm"></div>
                 <div class="col-sm-8">
-                    <h1>Orders</h1>
+                    <h1>Unshipped Orders</h1>
                 </div>
                 <div class="col-sm"></div>
                 
