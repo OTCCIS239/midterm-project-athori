@@ -19,8 +19,13 @@ $port = getenv('DB_PORT)');
 $database = getenv('DB_DATABASE');
 $username = getenv('DB_USERNAME');
 $password = getenv('DB_PASSWORD');
+$options = array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+); 
 
-$dsn = "mysql:host=$host;port=$port;dbname=$database";
+$dbh = new PDO($dsn, $username, $password, $options);
+
+// $dsn = "mysql:host=$host;port=$port;dbname=$database";
 
 
 
