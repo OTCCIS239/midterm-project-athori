@@ -8,11 +8,7 @@ require_once('../includes/init.php');
 // Here you might connect to the database and show off some of your newest guitars.
 require_once('../includes/db.php');
 
-$queryOrders = 'SELECT * FROM customers  JOIN orders ON customers.customerID = orders.CustomerID WHERE shipDate IS NULL';
-$statement2 = $conn->prepare($queryOrders);
-    $statement2->execute();
-    $orders = $statement2->fetchAll();
-    $statement2->closeCursor();
+$unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.customerID = orders.CustomerID WHERE shipDate IS NULL', [], $conn);
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,40 +24,35 @@ $statement2 = $conn->prepare($queryOrders);
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm-8">
-                    <h1>Unshipped Orders</h1>
+                <div class="col-sm">
+                    <h1>ALL ORDERS</h1>
                 </div>
-                <div class="col-sm"></div>
-                
             </div>
-            <div class="row">
-                <div class="col-sm-2">
-                </div>
-                <div class="col-sm-6">
-                    
-                    <table>
+            <div class"row">
+                <table class="table">
+                    <thead class="thead-dark">
                         <tr>
-                            <th>Customer Name</th>
-                            <th>Order ID</th>
-                            <th>Order Date</th>
-                            
+                            <th scope="col">Order #</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col"></th>
                         </tr>
-
-                        <?php foreach ($orders as $order) : ?>
-                        <tr>
-                            <td><?= $order['firstName']; ?> <?= $order['lastName']; ?></td>
-                            <td><?= $order['orderID']; ?></td>
-                            <td><?= $order['orderDate']; ?></td>
-                            <td><button>view more</button>
-                            
-                        </tr>
-                        <?php endforeach; ?>            
-                    </table>
-                </div>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($unshippedOrders as $unshippedOrder): ?>
+                            <tr>
+                                <th scope="row"><?= $unshippedOrder['orderID']; ?></th>
+                                <td><?= $unshippedOrder['firstName']; ?> <?= $unshippedOrder['firstName']; ?> </td>
+                                <td><?= $unshippedOrder['emailAddress']; ?> </td>
+                                <td><?= $unshippedOrder['orderDate']; ?></td>
+                                <td><button></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
