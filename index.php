@@ -4,8 +4,8 @@
 // development experience nicer! If your PHP throws an
 // error, we will show you exactly what went wrong!
 // This line should be on every page you create.
-require_once('./includes/init.php');
-require_once('./includes/db.php')
+// require_once('./includes/init.php');
+// require_once('./includes/db.php')
 
 // Here you might connect to the database and show off some of your newest guitars.
 
@@ -28,7 +28,28 @@ require_once('./includes/db.php')
     - Unshipped Orders
     - Products -->
     <div class="container">
-        
+    nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/unshipped_orders.php">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
