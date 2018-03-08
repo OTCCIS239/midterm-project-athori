@@ -23,7 +23,7 @@ $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 ); 
 
-$dbh = new PDO($dsn, $username, $password, $options);
+// $dbh = new PDO($dsn, $username, $password, $options);
 
 // $dsn = "mysql:host=$host;port=$port;dbname=$database";
 
@@ -34,7 +34,7 @@ $dbh = new PDO($dsn, $username, $password, $options);
 // $dsn = "mysql:host=localhost;dbname=my_guitar_shop";
 // $username = 'root';
 // $password = null;
-$conn = new PDO($dsn, $username, $password);
+$conn = new PDO($dsn, $username, $password, $options);
 function getMany($query, array $binds = [], $conn)
 {
     $statement = $conn->prepare($query);
