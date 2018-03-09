@@ -61,7 +61,7 @@ require_once('../includes/db.php');
                                         </div>
                                     <div>
                                 </td>
-                                <td><a href="../pages/order_details.php?varname=<?php echo $order['orderID']; ?>">Page2</a>
+                                <td><a href="../pages/order_details.php?varname=<?php echo $order['orderID']; ?>">Page2</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

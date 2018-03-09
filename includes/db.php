@@ -25,7 +25,7 @@ $options = array(
 
 // $dbh = new PDO($dsn, $username, $password, $options);
 
-$dsn = "mysql: host=$host;port=$port;dbname=$database";
+$dsn = "mysql:host=$host;port=$port;dbname=$database";
 
 
 
