@@ -1,0 +1,53 @@
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.myHeader{
+  background-color: rgb(51, 51, 51) !important;
+  color: white;
+}
+.container {
+  max-width: 1200px;
+}
+
+.pricing-header {
+  max-width: 1200px;
+}
+
+.card-deck .card {
+  min-width: 350px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.text-dark {
+  font-size: 1.5em;
+  color: white !important;
+}
+
+.myName{
+  font-size: 2em;
+  color: white !important;
+}
+
+.btn-outline-primary{
+  font-size: 1.5em;
+}
+
+img{
+  margin-top: -17px;
+}
+a.text-dark:focus, a.text-dark:hover{
+  color:#007bff !important;
+}
+.myFooter{
+  background-color: rgb(51, 51, 51) !important;
+  color: white;
+  margin-top: 45px;
+}
