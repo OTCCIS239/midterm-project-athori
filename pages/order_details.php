@@ -8,7 +8,7 @@ require_once('../includes/db.php');
 
 $var_value = $_GET['varname'];
 $customerInfo = getOne("SELECT * FROM orders JOIN customers ON orders.customerID = customers.customerID JOIN addresses ON orders.billingAddressID = addresses.addressID   WHERE orderID='$var_value'", [], $conn);
-$orderInfo = getOne("SELECT * FROM orders JOIN orderItems ")
+// $orderInfo = getOne("SELECT * FROM orders JOIN orderItems ")
 // Here you might connect to the database and show off some of your newest guitars.
 
 ?>
