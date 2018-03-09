@@ -7,7 +7,7 @@ require_once('../includes/init.php');
 
 // Here you might connect to the database and show off some of your newest guitars.
 require_once('../includes/db.php');
-require_once('../includes/order_details.php');
+
 
 $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.customerID = orders.CustomerID WHERE shipDate IS NULL', [], $conn);
 ?>
@@ -23,10 +23,10 @@ $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.cus
 
     </head>
     <body>
-        <div class="container">
+    <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <h1>Unshipped ORDERS</h1>
+                    <h1>ALL ORDERS</h1>
                 </div>
             </div>
             <div class"row">
@@ -38,16 +38,31 @@ $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.cus
                             <th scope="col">Email Address</th>
                             <th scope="col">Order Date</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($unshippedOrders as $unshippedOrder): ?>
                             <tr>
                                 <th scope="row"><?= $unshippedOrder['orderID']; ?></th>
-                                <td><?= $unshippedOrder['firstName']; ?> <?= $unshippedOrder['firstName']; ?> </td>
+                                <td><?= $unshippedOrder['firstName']; ?> <?= $unshippedOrder['lastName']; ?> </td>
                                 <td><?= $unshippedOrder['emailAddress']; ?> </td>
                                 <td><?= $unshippedOrder['orderDate']; ?></td>
-                                <td><button></td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="row">
+                                                    <!-- startmodal -->
+                                                    <!-- end modal -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div>
+                                </td>
+                                <td><a href="../pages/order_details.php?varname=<?php echo $unshippedOrder['orderID']; ?>">Page2</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

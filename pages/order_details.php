@@ -13,10 +13,10 @@ $customerInfo = getOne("SELECT * FROM orders JOIN customers ON orders.customerID
 $ordersInfo = getMany("SELECT * FROM orders JOIN orderItems ON orders.orderID = orderItems.orderID JOIN products ON 
               orderItems.productID = products.productID WHERE orders.orderID='$var_value'", [], $conn);
 
-$result = mysql_query("SELECT SUM(value) AS value_sum FROM orderItems WHERE orders.orderID='$var_value'");
-$row = mysql_fetch_assoc($result);
-$sum = $row['value_sum'];
-// $discountTotal = "SELECT SUM(discountAmount) FROM orderItems WHERE orders.orderID='$var_value'";
+$discountTotal = getOne("SELECT SUM(discountAmount) AS discount FROM orderitems WHERE orderID='$var_value'", [], $conn);
+
+$orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice)) AS total FROM orders JOIN orderItems ON
+              orders.orderID = orderItems.orderID WHERE orders.orderID='$var_value'", [], $conn);
 // Here you might connect to the database and show off some of your newest guitars.
 
 ?>
@@ -117,12 +117,30 @@ $sum = $row['value_sum'];
             <?php endforeach; ?>
           </tbody>
         </table>
-        <form>
-          <div class="col-md-4 mb-4">
-            <label for="orderDiscount">Order Discount</label>
-            <input type="text" class="form-control" id="orderDiscount" placeholder="" value="<?= $sum; ?>">
-          </div>
-        </form>
+      </div>
+      <div class="row">
+        <div class="col-md order-md-1">
+          <form>
+          <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="orderDiscount">Order Discount"</label>
+                <input type="text" class="form-control" id="orderDiscount" placeholder="" value="$<?= $discountTotal['discount']; ?>">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="taxAmount">Tax:</label>
+                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $orderInfo['taxAmount']; ?>">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="taxAmount">Tax:</label>
+                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $orderInfo['taxAmount']; ?>">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="shippingAmount">Order Total:</label>
+                <input type="text" class="form-control" id="orderTotal" placeholder="" value="$<?= $orderTotal['total']; ?>">
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     
