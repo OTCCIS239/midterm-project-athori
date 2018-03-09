@@ -5,10 +5,8 @@
 // error, we will show you exactly what went wrong!
 require_once('../includes/init.php');
 require_once('../includes/db.php');
-
-$orders = getMany("SELECT * FROM customers JOIN orders ON customers.customerID = orders.CustomerID", [], $conn);
-
-
+// $orders = getMany("SELECT * FROM customers JOIN orders ON customers.customerID = orders.customerID", [], $conn);
+   $orders = getMany("SELECT * FROM orders JOIN customers ON orders.customerID = customers.customerID ORDER BY orderID", [], $conn);
 // Here you might connect to the database and show off some of your newest guitars.
 
 ?>
@@ -39,16 +37,31 @@ $orders = getMany("SELECT * FROM customers JOIN orders ON customers.customerID =
                             <th scope="col">Email Address</th>
                             <th scope="col">Order Date</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($orders as $order): ?>
                             <tr>
                                 <th scope="row"><?= $order['orderID']; ?></th>
-                                <td><?= $order['firstName']; ?> <?= $order['firstName']; ?> </td>
+                                <td><?= $order['firstName']; ?> <?= $order['lastName']; ?> </td>
                                 <td><?= $order['emailAddress']; ?> </td>
                                 <td><?= $order['orderDate']; ?></td>
-                                <td><button></td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="row">
+                                                    <!-- startmodal -->
+                                                    <!-- end modal -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div>
+                                </td>
+                                <td><a href="../pages/order_details.php?varname=<?php echo $order['orderID']; ?>">Page2</a>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

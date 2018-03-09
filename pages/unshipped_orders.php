@@ -7,6 +7,7 @@ require_once('../includes/init.php');
 
 // Here you might connect to the database and show off some of your newest guitars.
 require_once('../includes/db.php');
+require_once('../includes/order_details.php');
 
 $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.customerID = orders.CustomerID WHERE shipDate IS NULL', [], $conn);
 ?>
@@ -25,7 +26,7 @@ $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.cus
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <h1>ALL ORDERS</h1>
+                    <h1>Unshipped ORDERS</h1>
                 </div>
             </div>
             <div class"row">
