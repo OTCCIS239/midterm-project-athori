@@ -1,36 +1,15 @@
-
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Pricing example for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Custom styles for this template -->
-    <link href="styles.css" rel="stylesheet">
+    <?php include 'head.php';?>
   </head>
 
   <body>
-
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow myHeader">
-      <h5 class="my-0 mr-md-auto font-weight-normal myName">Ray's Music Exchange</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-      </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+    <div>
+      <?php include 'menu.php';?>
     </div>
     <div>
-      <!-- <img src="./images/guitar-header.jpg"> -->
+      <img src="./images/guitar-header.jpg">
     </div>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Featured Items</h1>
@@ -45,7 +24,7 @@
           </div>
           <div class="card-body">
             
-            <!-- <img src="./images/shopping.jpg"> -->
+            <img src="./images/shopping.jpg">
           </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -53,7 +32,7 @@
             <h4 class="my-0 font-weight-normal">Bass</h4>
           </div>
           <div class="card-body">
-          <!-- <img src="./images/bass.jpg"> -->
+          <img src="./images/bass.jpg">
           </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -61,15 +40,15 @@
             <h4 class="my-0 font-weight-normal">Drums</h4>
           </div>
           <div class="card-body">
-          <!-- <img src="./images/drums.jpg"> -->
+          <img src="./images/drums.jpg">
           </div>
         </div>
       </div>
     <div>
 </div>
 </div>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow myFooter">
-      <p>Copy Right Jason Stass 2018</p>
+    <div>
+    <?php include 'footer.php';?>
     </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->

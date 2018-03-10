@@ -12,6 +12,8 @@ html {
 }
 .container {
   max-width: 1200px;
+  
+  min-height: 75vh;
 }
 
 .pricing-header {
@@ -50,4 +52,9 @@ a.text-dark:focus, a.text-dark:hover{
   background-color: rgb(51, 51, 51) !important;
   color: white;
   margin-top: 45px;
+}
+
+
+body{
+  height: 100vh;
 }

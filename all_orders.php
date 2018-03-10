@@ -5,23 +5,19 @@
 // error, we will show you exactly what went wrong!
 require_once('./includes/init.php');
 require_once('./includes/db.php');
-// $orders = getMany("SELECT * FROM customers JOIN orders ON customers.customerID = orders.customerID", [], $conn);
-   $orders = getMany("SELECT * FROM orders JOIN customers ON orders.customerID = customers.customerID ORDER BY orderID", [], $conn);
+
+$orders = getMany("SELECT * FROM orders JOIN customers ON orders.customerID = customers.customerID ORDER BY orderID", [], $conn);
 // Here you might connect to the database and show off some of your newest guitars.
 
 ?>
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <?php include 'head.php';?>
 
     </head>
     <body>
+    <?php include 'menu.php';?>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -61,12 +57,15 @@ require_once('./includes/db.php');
                                         </div>
                                     <div>
                                 </td>
-                                <td><a href="../pages/order_details.php?varname=<?php echo $order['orderID']; ?>">Page2</a></td>
+                                <td><a href="order_details.php?varname=<?php echo $order['orderID']; ?>">Page2</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div>
+        <?php include 'footer.php';?>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

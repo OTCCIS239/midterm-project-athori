@@ -3,10 +3,10 @@
 // This file initializes some goodies that will make your
 // development experience nicer! If your PHP throws an
 // error, we will show you exactly what went wrong!
-require_once('../includes/init.php');
+require_once('./includes/init.php');
 
 // Here you might connect to the database and show off some of your newest guitars.
-require_once('../includes/db.php');
+require_once('./includes/db.php');
 
 
 $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.customerID = orders.CustomerID WHERE shipDate IS NULL', [], $conn);
@@ -14,15 +14,12 @@ $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.cus
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+        <?php include 'head.php';?>
     </head>
     <body>
+        <div>
+            <?php include 'menu.php';?>
+        <div>
     <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -68,6 +65,9 @@ $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.cus
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div>
+            <?php include 'footer.php';?>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
