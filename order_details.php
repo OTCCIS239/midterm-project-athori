@@ -47,54 +47,54 @@ $orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice))
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="orderDate">Order Date:</label>
-                <input type="text" class="form-control" id="orderDate" placeholder="" value="<?= $customerInfo['orderDate']; ?>">
+                <input type="text" class="form-control" id="orderDate" placeholder="" value="<?= $customerInfo['orderDate']; ?>"readonly>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="shippingDate">Date Shipped:</label>
-                <input type="text" class="form-control" id="shippingDate" placeholder="" value="<?= $customerInfo['shipDate']; ?>">
+                <input type="text" class="form-control" id="shippingDate" placeholder="" value="<?= $customerInfo['shipDate']; ?>"readonly>
               </div>
             </div>
             <h4 class="mb-3">Customer Information</h4>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="customerName">Customer Name:</label>
-                <input type="text" class="form-control" id="customerName" placeholder="" value="<?= $customerInfo['firstName']; ?> <?= $customerInfo['lastName']; ?>">
+                <input type="text" class="form-control" id="customerName" placeholder="" value="<?= $customerInfo['firstName']; ?> <?= $customerInfo['lastName']; ?>"readonly>
               </div>
               <div class="col-md-6 mb-3">
                   <label for="emailAddress">Email Address:</label>
-                  <input type="text" class="form-control" id="emailAddress" placeholder="" value="<?= $customerInfo['emailAddress']; ?>">
+                  <input type="text" class="form-control" id="emailAddress" placeholder="" value="<?= $customerInfo['emailAddress']; ?>"readonly>
                 </div>
             </div>
             <h4 class="mb-3">Billing Information</h4>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="creditCardUsed">Credit Card Used:</label>
-                <input type="text" class="form-control" id="creditCardUsed" placeholder="" value="<?= $customerInfo['cardNumber']; ?>">
+                <input type="text" class="form-control" id="creditCardUsed" placeholder="" value="<?= $customerInfo['cardNumber']; ?>"readonly>
               </div>
             </div>
             <div class="mb-3">
               <label for="address">Address:</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="<?= $customerInfo['line1']; ?>">
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="<?= $customerInfo['line1']; ?>"readonly>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
             <div class="mb-3">
               <label for="address2">Address 2: <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="<?= $customerInfo['line2']; ?>">
+              <input type="text" class="form-control" id="address2" placeholder="<?= $customerInfo['line2']; ?>"readonly>
             </div>
             <div class="row">
               <div class="col-md-4 mb-4">
                 <label for="city">City:</label>
-                <input type="text" class="form-control" id="city" placeholder="" value="<?= $customerInfo['city']; ?>">
+                <input type="text" class="form-control" id="city" placeholder="" value="<?= $customerInfo['city']; ?>"readonly>
               </div>
               <div class="col-md-4 mb-4">
                 <label for="state">State</label>
-                <input type="text" class="form-control" id="state" placeholder="" value="<?= $customerInfo['state']; ?>">
+                <input type="text" class="form-control" id="state" placeholder="" value="<?= $customerInfo['state']; ?>"readonly>
               </div>
               <div class="col-md-4 mb-4">
                 <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" placeholder="" value="<?= $customerInfo['zipCode']; ?>">
+                <input type="text" class="form-control" id="zip" placeholder="" value="<?= $customerInfo['zipCode']; ?>"readonly>
               </div>
             </div>
           </form>
@@ -130,19 +130,19 @@ $orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice))
           <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="orderDiscount">Order Discount"</label>
-                <input type="text" class="form-control" id="orderDiscount" placeholder="" value="$<?= $discountTotal['discount']; ?>">
+                <input type="text" class="form-control" id="orderDiscount" placeholder="" value="$<?= $discountTotal['discount']; ?>"readonly>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="taxAmount">Tax:</label>
-                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $taxTotal['tax']; ?>">
+                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $taxTotal['tax']; ?>"readonly>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="shippingAmount">Shipping Cost:</label>
-                <input type="text" class="form-control" id="shippingAmount" placeholder="" value="$<?= $shipTotal['shipAmount']; ?>">
+                <input type="text" class="form-control" id="shippingAmount" placeholder="" value="$<?= $shipTotal['shipAmount']; ?>"readonly>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="shippingAmount">Order Total:</label>
-                <input type="text" class="form-control" id="orderTotal" placeholder="" value="$<?= $orderTotal['total']; ?>">
+                <input type="text" class="form-control" id="orderTotal" placeholder="" value="$<?= $orderTotal['total']; ?>"readonly>
               </div>
             </div>
           </form>
