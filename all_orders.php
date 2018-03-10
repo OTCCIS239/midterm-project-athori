@@ -3,8 +3,8 @@
 // This file initializes some goodies that will make your
 // development experience nicer! If your PHP throws an
 // error, we will show you exactly what went wrong!
-require_once('../includes/init.php');
-require_once('../includes/db.php');
+require_once('./includes/init.php');
+require_once('./includes/db.php');
 // $orders = getMany("SELECT * FROM customers JOIN orders ON customers.customerID = orders.customerID", [], $conn);
    $orders = getMany("SELECT * FROM orders JOIN customers ON orders.customerID = customers.customerID ORDER BY orderID", [], $conn);
 // Here you might connect to the database and show off some of your newest guitars.
