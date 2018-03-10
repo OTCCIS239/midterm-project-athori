@@ -59,7 +59,7 @@ $unshippedOrders = getMany('SELECT * FROM customers JOIN orders ON customers.cus
                                         </div>
                                     <div>
                                 </td>
-                                <td><a href="../pages/order_details.php?varname=<?php echo $unshippedOrder['orderID']; ?>">Page2</a></td>
+                                <td><a href="order_details.php?varname=<?php echo $unshippedOrder['orderID']; ?>">Page2</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
