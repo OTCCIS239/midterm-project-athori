@@ -14,8 +14,8 @@ $guitars = getMany("SELECT * FROM products JOIN categories ON products.categoryI
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <meta name="author" content="Jason Stass">
+    
 
     <title>Pricing example for Bootstrap</title>
 
@@ -69,6 +69,7 @@ $guitars = getMany("SELECT * FROM products JOIN categories ON products.categoryI
                                             <div class="modal-content">
                                                 <div class="row">
                                                     <!-- startmodal -->
+                                                    <?php include ('../pages/product_details') ?>
                                                     <!-- end modal -->
                                                 </div>
                                             </div>
