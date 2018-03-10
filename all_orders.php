@@ -33,7 +33,7 @@ $orders = getMany("SELECT * FROM orders JOIN customers ON orders.customerID = cu
                             <th scope="col">Email Address</th>
                             <th scope="col">Order Date</th>
                             <th scope="col"></th>
-                            <th scope="col"></th>
+                            
 
                         </tr>
                     </thead>
@@ -44,20 +44,7 @@ $orders = getMany("SELECT * FROM orders JOIN customers ON orders.customerID = cu
                                 <td><?= $order['firstName']; ?> <?= $order['lastName']; ?> </td>
                                 <td><?= $order['emailAddress']; ?> </td>
                                 <td><?= $order['orderDate']; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="row">
-                                                    <!-- startmodal -->
-                                                    <!-- end modal -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div>
-                                </td>
-                                <td><a href="order_details.php?varname=<?php echo $order['orderID']; ?>">Page2</a></td>
+                                <td><a href="order_details.php?varname=<?php echo $order['orderID']; ?>">View Info</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

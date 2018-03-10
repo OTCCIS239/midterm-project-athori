@@ -15,7 +15,12 @@ $ordersInfo = getMany("SELECT * FROM orders JOIN orderItems ON orders.orderID = 
 
 $discountTotal = getOne("SELECT SUM(discountAmount) AS discount FROM orderitems WHERE orderID='$var_value'", [], $conn);
 
-$orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice)) AS total FROM orders JOIN orderItems ON
+$taxTotal = getOne("SELECT SUM(taxAmount) AS tax FROM orders WHERE orderID='$var_value'", [], $conn);
+
+
+$shipTotal = getOne("SELECT SUM(shipAmount) AS shipAmount FROM orders WHERE orderID='$var_value'", [], $conn);
+
+$orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice)) AS total FROM orders JOIN orderitems ON
               orders.orderID = orderItems.orderID WHERE orders.orderID='$var_value'", [], $conn);
 // Here you might connect to the database and show off some of your newest guitars.
 
@@ -103,8 +108,8 @@ $orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice))
           <thead class="thead-dark">
             <tr>
               <th scope="col">Product Name</th>
-              <th scope="col">Item Price</th>
               <th scope="col">Quantity</th>
+              <th scope="col">Item Price</th>
             </tr>
           </thead>
           <tbody>
@@ -129,11 +134,11 @@ $orderTotal = getOne("SELECT (SUM(shipAmount) + SUM(taxAmount) + SUM(itemPrice))
               </div>
               <div class="col-md-3 mb-3">
                 <label for="taxAmount">Tax:</label>
-                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $orderInfo['taxAmount']; ?>">
+                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $taxTotal['tax']; ?>">
               </div>
               <div class="col-md-3 mb-3">
-                <label for="taxAmount">Tax:</label>
-                <input type="text" class="form-control" id="taxAmount" placeholder="" value="$<?= $orderInfo['taxAmount']; ?>">
+                <label for="shippingAmount">Shipping Cost:</label>
+                <input type="text" class="form-control" id="shippingAmount" placeholder="" value="$<?= $shipTotal['shipAmount']; ?>">
               </div>
               <div class="col-md-3 mb-3">
                 <label for="shippingAmount">Order Total:</label>
