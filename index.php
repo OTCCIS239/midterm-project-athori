@@ -41,7 +41,7 @@
       <a class="btn btn-outline-primary" href="#">Sign up</a>
     </div>
     <div>
-      <img src="./images/guitar-header.jpg">
+      <!-- <img src="./images/guitar-header.jpg"> -->
     </div>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Featured Items</h1>
@@ -56,7 +56,7 @@
           </div>
           <div class="card-body">
             
-            <img src="./images/shopping.jpg">
+            <!-- <img src="./images/shopping.jpg"> -->
           </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -64,7 +64,7 @@
             <h4 class="my-0 font-weight-normal">Bass</h4>
           </div>
           <div class="card-body">
-          <img src="./images/bass.jpg">
+          <!-- <img src="./images/bass.jpg"> -->
           </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -72,7 +72,7 @@
             <h4 class="my-0 font-weight-normal">Drums</h4>
           </div>
           <div class="card-body">
-          <img src="./images/drums.jpg">
+          <!-- <img src="./images/drums.jpg"> -->
           </div>
         </div>
       </div>
