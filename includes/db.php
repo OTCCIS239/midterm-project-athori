@@ -15,7 +15,7 @@
 // PHP Documentation for the MySQL PDO DSN:
 // http://php.net/manual/en/ref.pdo-mysql.connection.php
 $host = getenv('DB_HOST');
-$port = getenv('DB_PORT)');
+$port = getenv('DB_PORT');
 $database = getenv('DB_DATABASE');
 $username = getenv('DB_USERNAME');
 $password = getenv('DB_PASSWORD');
